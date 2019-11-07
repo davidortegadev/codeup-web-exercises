@@ -1,17 +1,52 @@
-.fancy-header {
+body {
+    background-color: ##0191b5;
+    background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
+    font-family: 'Galindo', cursive;
+}
+
+ .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
+    font-size:6.5vw;
+    font-style:italic;
+    font-variant:small-caps;
+    text-shadow: #ffbf00 2px 2px 2px;
 }
-/*h1 {*/
-/*    text-decoration: orchid underline;*/
-/*    color:lightcoral;*/
-/*    background:teal;*/
-/*    font-size:7vw;*/
-/*    font-style:italic;*/
-/*    text-align:center;*/
-/*    font-variant:small-caps;*/
-/*    text-shadow: crimson 2px 2px 2px;*/
-/*}*/
+
+h1 {
+    text-align:center;
+}
+header {
+    color:#01B57F;
+    text-decoration: underline;
+    text-align:center;
+}
+ul>li {
+    list-style: square;
+}
+
+table {
+    border: 1px solid black;
+    width: 75%;
+}
+th, td {
+    height: 30px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+a:link {
+    background-color: yellow;
+}
+a:visited {
+    background-color: cyan;
+}
+a:hover {
+    background-color: lightgreen;
+}
+a:active {
+    background-color: hotpink;
+}
 /*h2 {*/
 /*    font-size:40px;*/
 
