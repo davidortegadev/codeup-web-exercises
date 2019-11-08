@@ -1,6 +1,6 @@
 body {
     background-color: ##0191b5;
-    background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
+    background-image: url("../img/arches.png");
     font-family: 'Galindo', cursive;
 }
 
@@ -14,20 +14,20 @@ body {
 }
 
 h1 {
-    text-align:center;
+    text-align: center;
 }
-header {
+h1, h2 {
     color:#01B57F;
-    text-decoration: underline;
-    text-align:center;
+    text-decoration: underline
 }
-ul>li {
+ul {
     list-style: square;
 }
 
 table {
     border: 1px solid black;
     width: 75%;
+    background-image: url("../img/exclusive_paper.png");
 }
 th, td {
     height: 30px;
