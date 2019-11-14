@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+main {
+    background: lightgreen;
+    margin-top: 2em;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    /*grid-template-rows: 1fr 1fr 1fr;*/
+    grid-template-areas: ;
+    grid-gap: 20px;
+    grid-template-area:
+        "one one . . ."
+        "one one . two ."
+        ". . . three three"
+
+}
+main div {
+    font-size: 2em;
+    color: white;
+    background: grey;
+    border: 2px solid black;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}
+.example.item{
+    background: lightgreen;
+    opacity.7;
+}
+.one {
+    grid-area: one;
+    background-color: purple;
+}
+.two {
+    grid-area: two;
+    background-color: orange;
+}
+.three {
+    grid-area: three;
+    background-color: blue;
+}
+.six {
+    /*grid-area: 2/2/3/4;*/
+    /*grid-row: 2 / 4;*/
+    /*grid-column: 2 / 4;*/
+}
+.seven {
+    /*grid-area: 2/4/4/5*/
+}
+.ten {
+    /*grid-area: 3/3/4/5*/
+}
