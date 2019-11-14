@@ -75,4 +75,5 @@ a {
     /* This is a flex item */
     display: flex;
     flex-direction: column;
+    flex-basis: 100%;
 }

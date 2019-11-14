@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Work Sans";
+    margin: 0;
+}
+nav {
+    background: #b4b4b4;
+}
+#left {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* made unordered list a flex container */
+}
+#right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+#whole {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo {
+    font-size: x-large;
+    font-family: sans-serif;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: "Monserrat";
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+}
+nav a:hover {
+    background: blue;
+}
