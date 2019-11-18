@@ -34,12 +34,17 @@
     // }
     // console.log(firstItem([1,2,3]))
     // console.log(firstItem(["dog","cat","bird"]))
-
-    var arrayLength=function(inputArray) {
-        return inputArray.length
+    //
+    // var arrayLength=function(inputArray) {
+    //     return inputArray.length
+    // }
+    // console.log(arrayLength(["dog","cat","bird","fish"]));
+    // console.log(arrayLength(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
+    var lastItem=function(inputArray) {
+        return inputArray[inputArray.length - 1];
     }
-    console.log(arrayLength(["dog","cat","bird","fish"]));
-    console.log(arrayLength(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
+    console.log(lastItem(["dog","cat","bird","fish"]));
+    console.log(lastItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
 </script>
 </body>
 </html>
