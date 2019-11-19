@@ -40,11 +40,16 @@
     // }
     // console.log(arrayLength(["dog","cat","bird","fish"]));
     // console.log(arrayLength(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
-    var lastItem=function(inputArray) {
-        return inputArray[inputArray.length - 1];
+    // var lastItem=function(inputArray) {
+    //     return inputArray[inputArray.length - 1];
+    // }
+    // console.log(lastItem(["dog","cat","bird","fish"]));
+    // console.log(lastItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
+    var nthItem=function(inputArray, n) {
+        return inputArray[n-1]
     }
-    console.log(lastItem(["dog","cat","bird","fish"]));
-    console.log(lastItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
+    console.log(nthItem(["dog","cat","bird","fish"], 2));
+    console.log(nthItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"], 2));
 </script>
 </body>
 </html>
