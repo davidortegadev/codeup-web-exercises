@@ -45,11 +45,18 @@
     // }
     // console.log(lastItem(["dog","cat","bird","fish"]));
     // console.log(lastItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"]));
-    var nthItem=function(inputArray, n) {
-        return inputArray[n-1]
+    // var nthItem=function(inputArray, n) {
+    //     return inputArray[n-1]
+    // }
+    // console.log(nthItem(["dog","cat","bird","fish"], 2));
+    // console.log(nthItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"], 2));
+    var getType=function(input) {
+        return typeof(input)
     }
-    console.log(nthItem(["dog","cat","bird","fish"], 2));
-    console.log(nthItem(["apple", "mango", "grapes", "pineapple", "kiwi", "coconut", "dragonfruit"], 2));
+    console.log(getType("dan"));
+    console.log(getType(7));
+    console.log(getType(true));
+
 </script>
 </body>
 </html>
