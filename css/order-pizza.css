@@ -1,0 +1,13 @@
+.jumbotron{
+	background-image:url("../img/pizza.png");
+	text-align: center;
+}
+h1 {
+	background-color: white;
+	opacity: .6;
+}
+@media screen and (max-width:499px) {
+	.jumbotron, h1, .jumbotron-fluid{
+		display: none;
+	}
+}
