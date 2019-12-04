@@ -219,42 +219,42 @@ console.log("hello from conditionals lec.js!");
 
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
 
-var color = prompt('What color is the traffic light?');
+// var color = prompt('What color is the traffic light?');
+//
+// var trafficLight = function(color){
+//     if (color==='green') {
+//         alert ('floor it')
+//     } else if (color==='yellow') {
+//         alert ('floor it harder')
+//     } else if (color==='red'){
+//         alert ('no cop no stop')
+//     } else {
+//         alert ('that ain\'t no traffic light color i\'ve ever heard of')
+//     }
+// };
 
-var trafficLight = function(color){
-    if (color==='green') {
-        alert ('floor it')
-    } else if (color==='yellow') {
-        alert ('floor it harder')
-    } else if (color==='red'){
-        alert ('no cop no stop')
-    } else {
-        alert ('that ain\'t no traffic light color i\'ve ever heard of')
-    }
-};
-
-trafficLight(color);
+// trafficLight(color);
 
 
 // ================ NESTED STATEMENTS ===============
 //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license.
 
-var userAge=15;
-var hasPermit=true;
-
-if(userAge<15){
-    alert('sorry you\'re not old enough!');
-} else {
-    if(userAge===15){
-        alert('you can have a permit! yay!');
-    } else if (userAge>=16 && hasPermit){
-        alert('you can have a license');
-    } else if (userAge>=16 && !hasPermit){
-        alert('sorry you need a permit first!');
-    } else {
-        alert('please see front desk!')
-    }
-}
+// var userAge=15;
+// var hasPermit=true;
+//
+// if(userAge<15){
+//     alert('sorry you\'re not old enough!');
+// } else {
+//     if(userAge===15){
+//         alert('you can have a permit! yay!');
+//     } else if (userAge>=16 && hasPermit){
+//         alert('you can have a license');
+//     } else if (userAge>=16 && !hasPermit){
+//         alert('sorry you need a permit first!');
+//     } else {
+//         alert('please see front desk!')
+//     }
+// }
 
 
 
@@ -293,7 +293,9 @@ if(userAge<15){
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
-
+// weatherMessage = (weather==='rainy') ? 'It\'s raining!' : 'Have a nice day!' ;
+//
+// console.log(weatherMessage);
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
@@ -307,6 +309,9 @@ if(userAge<15){
 //     case "cheese":
 //         alert("Just plain cheese? Okay...");
 //         break;
+//     case "ham":
+//         alert("ham is nice and easy to spell");
+//         break;
 //     default:
 //         alert(pizzaPreference + " isn't my favorite, but let's order some!");
 //         break;
@@ -315,20 +320,97 @@ if(userAge<15){
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var weather = 'rainy';
+
+// switch(weather){
+//     case "rainy":
+//         alert('It\'s raining!');
+//         break;
+//     case "sunny":
+//         alert('It\'s sunny!');
+//         break;
+//     case "snow":
+//         alert('It\'s snowing!');
+//         break;
+//     default:
+//         alert('Have a great day!')
+// }
+
+// function checkWeather(weather){
+//     var weatherMessage;
+//     switch(weather){
+//         case "rainy":
+//             weatherMessage="it's raining";
+//             break;
+//         case "sunny":
+//             weatherMessage="it's sunny";
+//             break;
+//         case "snow":
+//             weatherMessage="it's snowing";
+//             break;
+//         default:
+//             weatherMessage="have a nice day";
+//             break;
+//     }
+//     return weatherMessage;
+// }
+// console.log(checkWeather('sunny'));
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
+// var color = prompt('What color is the traffic light?');
+//
+// var trafficLight = function(color){
+//     if (color==='green') {
+//         alert ('floor it')
+//     } else if (color==='yellow') {
+//         alert ('floor it harder')
+//     } else if (color==='red'){
+//         alert ('no cop no stop')
+//     } else {
+//         alert ('that ain\'t no traffic light color i\'ve ever heard of')
+//     }
+// };
 
+// trafficLight(color);
+
+// function trafficLight(color){
+//     var trafficMessage;
+//     switch(color){
+//         case"green":
+//             trafficMessage="floor it";
+//             break;
+//         case"yellow":
+//             trafficMessage="floor it with caution";
+//             break;
+//         case"red":
+//             trafficMessage="no cop no stop";
+//             break;
+//         default:
+//             trafficMessage="that ain't no traffic light color i've ever heard of";
+//             break;
+//     }
+//     return trafficMessage;
+// }
+// console.log(trafficLight('red'));
 
 // ================ REVERSE ENGINEERING =================
 // Visit each of these links, outline the steps required to achieve each of these demonstrations. You can write code or just write the logic steps that would achieve each output
 
 
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
-
-
+//
+// write a function that checks for the checkbox
+// if the checkbox is checked add $5 to the total amount child has earned
+// 'Child has earned' + (allowance) + 'this week.'
+//
+//
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
-
-
+//
+// write a function that looks for the output from a dropdown menu
+// using a switch statement, the resulting message changes.
+//
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
-
+//
+// write a function that looks for the output of a dropdown menu
+// using a ternary statement, change the css of the background color and text color based on the result
