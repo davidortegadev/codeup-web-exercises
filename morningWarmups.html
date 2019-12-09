@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<h1>javascript pushups</h1>
 <script>
     // function helloWorld() {
     //     return('Hello World!');
@@ -90,6 +91,19 @@
     //     }
     // }
 
+    function functionA(callbackFunction){
+        callbackFunction();
+    }
+    functionA(function () {
+        alert('It works.')
+    });
+
+    function functionB(callbackFunction){
+        callbackFunction('It works.');
+    }
+    functionB(function (message) {
+        alert(message)
+    })
 
 </script>
 </body>
