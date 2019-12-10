@@ -35,7 +35,7 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(function(names, i, arr){
+    names.forEach(function(names){
         console.log(names)
     });
     /**

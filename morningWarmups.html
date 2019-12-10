@@ -91,19 +91,32 @@
     //     }
     // }
 
-    function functionA(callbackFunction){
-        callbackFunction();
-    }
-    functionA(function () {
-        alert('It works.')
-    });
+    // function functionA(callbackFunction){
+    //     callbackFunction();
+    // }
+    // functionA(function () {
+    //     alert('It works.')
+    // });
+    //
+    // function functionB(callbackFunction){
+    //     callbackFunction('It works.');
+    // }
+    // functionB(function (message) {
+    //     alert(message)
+    // })
 
-    function functionB(callbackFunction){
-        callbackFunction('It works.');
+    // var contains = function(arr, param){
+    //     return (arr.indexOf(param)!==-1)
+    // }
+
+    var contains = function(arr, param) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i]===param){
+                return true
+            }
+        }
+        return false;
     }
-    functionB(function (message) {
-        alert(message)
-    })
 
 </script>
 </body>
