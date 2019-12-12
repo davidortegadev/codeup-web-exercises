@@ -74,6 +74,30 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: 'The Bible',
+            author: {
+                firstName: 'Jesus',
+                lastName: 'Christ'
+            }
+        },
+        {
+            title: 'The Bible 2: Electric Boogaloo King James Version ft. Dante from the Devil May Cry series',
+            author: {
+                firstName: 'King',
+                lastName: 'James'
+            }
+        },
+        {
+            title: 'Moby Dick',
+            author: {
+                firstName: 'Herman',
+                lastName: 'Melville'
+            }
+        }
+    ];
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
