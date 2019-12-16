@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>dom lecture</title>
+	<style>
+		.redBackground{
+			background-color:red;
+		}
+		.greenText{
+			color: green;
+		}
+		.purple{
+			color:purple;
+		}
+		.cyan{
+			color:cyan;
+		}
+	</style>
+</head>
+<body>
+<h1 id="header">happy honda days</h1>
+<h3>wish list</h3>
+<ul id="wishList">
+<!--	<li>a great career</li>-->
+<!--	<li class="even">two front teeth</li>-->
+<!--	<li>oculus quest</li>-->
+<!--	<li class="even">nintendo switch</li>-->
+<!--	<li>macbook pro 16''</li>-->
+<!--	<li class="even">valve index</li>-->
+</ul>
+<a id='codeup' href="http://codeup.com">codeup</a>
+<table>
+	<tr>
+		<td class="lawful good" id="lawfulgood">lawful good</td>
+		<td class="neutral good">neutral good</td>
+		<td class="chaotic good">chaotic good</td>
+	</tr>
+	<tr>
+		<td class="lawful neutral">lawful neutral</td>
+		<td class="neutral good">neutral good</td>
+		<td class="chaotic good">chaotic good</td>
+	</tr>
+	<tr>
+		<td class="lawful evil">lawful evil</td>
+		<td class="neutral evil">neutral evil</td>
+		<td class="chaotic evil">chaotic evil</td>
+	</tr>
+</table>
+<button id="button">click me!</button>
+<script>
+	// var lawfuls=document.getElementsByClassName('lawful');
+	// for(var i=0;i<lawfuls.length;i++){
+	// 	console.log(lawfuls[i])
+	// }
+	// var lawfulgood=document.getElementById('lawfulgood');
+	// console.log(lawfulgood);
+	//
+	// var allAlignments=document.getElementsByTagName('td');
+	// for(var i=0;i<allAlignments.length;i++){
+	// 	console.log(allAlignments[i])
+	// }
+
+	// console.log(document);
+	// var header=document.getElementById('header');
+	// console.log(header);
+	//
+	var thingsIWant=['a great career', 'two front teeth','oculus quest'
+					, 'nintendo switch','macbook pro 16\'\'','valve index'];
+	var wishList=document.getElementById('wishList');
+	var htmlString = '';
+	for(var i=0;i<thingsIWant.length;i++){
+		if (i%2!==0)
+		htmlString += '<li class="even">'+thingsIWant[i]+'</li>';
+		else
+		htmlString += '<li class="odd">'+thingsIWant[i]+'</li>';
+	}
+	wishList.innerHTML = htmlString;
+
+	setTimeout(function(){
+		for (var i=0;i<evens.length;i++){
+			evens[i].innerHTML='<em>money</em>';
+		}
+	},7000);
+
+	var evens=document.getElementsByClassName('even');
+
+	var odds=document.getElementsByClassName('odd');
+	setTimeout(function(){
+		for(var i=0;i<odds.length;i++){
+			odds[i].setAttribute('class','odd redBackground greenText');
+			// odds[i].style.color='red';
+			// odds[i].style['background-color']='green';
+		}
+	});
+
+	var codeupLink=document.getElementById('codeup').getAttribute('href');
+	console.log(codeupLink);
+
+	// console.log(evens);
+	// for(var i=0;i<evens.length;i++){
+		// console.log(evens[i])
+		// evens[i].innerHTML='<em>money</em>';
+	// 	console.log(evens[i].innerHTML)
+	// }
+	//
+	// var lis=document.getElementsByTagName('li');
+	// console.log(lis);
+	// for(var i=0;i<lis.length;i++){
+	// 	console.log(lis[i])
+	// }
+	var clicks = 0;
+	var button = document.getElementById('button');
+	console.log(button);
+	button.addEventListener('click',function(){clicks++;alert('button was clicked' + clicks + ' times.')})
+
+	button.addEventListener('mouseover', function(){
+		button.setAttribute('class','purple');
+	});
+	button.addEventListener('mouseout', function(){
+		button.setAttribute('class','cyan');
+	});
+	setTimeout(function(){
+		button.removeEventListener('click', buttonClick);
+	});
+
+</script>
+</body>
+</html>
