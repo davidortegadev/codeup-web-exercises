@@ -158,7 +158,7 @@ var restaurants = [
 
 restaurants.forEach(function(restaurant){
 	var popupEvent = new mapboxgl.Popup()
-		.setHTML('<h1>'+restaurant.name+'</h1>'+'\n'+restaurant.text);
+		.setHTML('<h1 style="text-align: center">'+restaurant.name+'</h1>'+'\n'+restaurant.text);
 	var markerEvent = new mapboxgl.Marker()
 		.setLngLat(restaurant.coords)
 		.setPopup(popupEvent)

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konami Code</title>
+</head>
+<body>
+<h1 id="headerText">Enter code:</h1>
+<p id="userCode"></p>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+	"use strict";
+
+	let userInput = [];
+	let i = 0;
+
+	const codes = [
+		{
+			code : 'arrowup,arrowup,arrowdown,arrowdown,arrowleft,arrowright,arrowleft,arrowright,b,a',
+			init : function(){
+				// $('body').css("background-color","lightgrey"); //test
+				$('#headerText').html('Konami Code Detected');
+				wipe();
+			},
+		},
+		{
+			code : 'a,b,a,c,a,b,b',
+			init: function(){
+				$('#headerText').html('Blood Code Detected');
+				wipe();
+			}
+		},
+		{
+			code : 'a,l,l,y,o,u,r,b,a,s,e,a,r,e,b,e,l,o,n,g,t,o,u,s',
+			init: function(){
+				$('#headerText').html('All your base are belong to us!');
+				wipe();
+			}
+		},
+		{
+			code: 'm,o,t,h,e,r,l,o,d,e',
+			init: function(){
+				$('#headerText').html('You hit the motherlode!');
+				wipe();
+			}
+		},
+		{
+			code: 'i,d,d,q,d',
+			init: function(){
+				$('#headerText').html('God Mode Activated');
+				wipe();
+			}
+		},
+		{
+			code: 'b,a,r,r,e,l,r,o,l,l',
+			init: function(){
+				$('#headerText').html('Do a barrel roll!');
+				wipe();
+			}
+		}
+	];
+
+	function wipe(){
+		userInput = [];
+		i=0;
+	}
+
+	$(document).keyup(function(event){
+		console.log(userInput); //shows array in log
+
+		userInput[i] = event.key; //adds key to array
+		i++; //increments array
+
+		$('#userCode').html(userInput); //shows array on page
+
+		//code checker
+		for(var j=0; j<codes.length; j++){
+			if(userInput.join().toLowerCase().includes(codes[j].code)){
+				codes[j].init();
+			}
+		};
+	});
+
+</script>
+</body>
+</html>

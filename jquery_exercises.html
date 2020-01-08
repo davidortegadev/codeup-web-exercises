@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jquery exercises</title>
+	<style>
+		body {background-color: lightcyan}
+	</style>
+</head>
+<body>
+<h1 class="header codeup">Happy New Year!</h1>
+<h3 id="newYear">New Year Resolutions</h3>
+<ul id="resolutions">
+	<li id="gainz odd">Gain Weight</li>
+	<li class="important even">Get an awesome career started!</li>
+	<li class="important odd">Spend more time with awesome people</li>
+	<li class="even codeup">Marie Kondo the heck out of my home</li>
+	<li class="odd">something something cook at home</li>
+</ul>
+<p class="para">This is a paragraph tag with paragraph text.</p>
+<div class="div">this is a div class with div text</div>
+<form name='resForm' action="">
+	<div>
+		<label for="goal">What do you want to do this year?</label>
+		<input id='goal' name='goal' type="text">
+	</div>
+</form>
+<button id="button" class='cyan'>Click Me!</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+	(function(){
+		'use strict';
+		$(document).ready(function(){
+			// //vanilla way
+			// document.getElementById('button').addEventListener('click', function(){
+			// 	alert('you clicked the button')
+			// });
+			// //jquery way
+			// $('#button').click(function(){
+			// 	alert('you clicked the button')
+			// });
+			// //vanilla way
+			// var listItems = document.getElementsByTagName('li');
+			// for (var i=0;i<listItems.length;i++){
+			// 	listItems[i].setAttribute('class', 'purple')
+			// }
+			// //jquery way
+			// $('li').addClass('purple');
+
+			// $('.codeup').css('border', '1px solid red');
+			// $('li').css('font-size','20px');
+			$('h1').click(function(){
+				$(this).css('background-color','yellow');
+			});
+			$('p').dblclick(function(e){
+				$(this).css('font-size','18px');
+			});
+			$('li').hover(
+				function(){
+					$('li').css('color','red');
+				},
+				function(){
+					$('li').css('color','black');
+			})
+		})
+	})();
+</script>
+
+</body>
+</html>

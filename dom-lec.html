@@ -51,6 +51,9 @@
 	</tr>
 </table>
 <button id="button">click me!</button>
+
+<h3>wishlist</h3>
+<form action=""></form>
 <script>
 	// var lawfuls=document.getElementsByClassName('lawful');
 	// for(var i=0;i<lawfuls.length;i++){
@@ -115,7 +118,7 @@
 	var clicks = 0;
 	var button = document.getElementById('button');
 	console.log(button);
-	button.addEventListener('click',function(){clicks++;alert('button was clicked' + clicks + ' times.')})
+	button.addEventListener('click',function(){clicks++;alert('button was clicked ' + clicks + ' times.')})
 
 	button.addEventListener('mouseover', function(){
 		button.setAttribute('class','purple');
@@ -127,6 +130,27 @@
 		button.removeEventListener('click', buttonClick);
 	});
 
+	var gifts = ['plant', 'necktie', 'socks', 'pony'];
+	var button = document.getElementById('button');
+	button.addEventListener('click', addGift);
+
+	function addGift(){
+		var gift = document.getElementById('gift').value;
+		gifts.push(gift);
+		renderWishList();
+		document.getElementById('gift').value='';
+	}
+
+	function renderWishList(){
+		//wipes out wish list, refills it with gifts array
+		var giftString='';
+		gifts.forEach(function(gift){
+			giftString += '<li>'+gift+'</li>';
+		});
+		document.getElementById('wishList').innerHTML = giftString;
+	}
+
+	renderWishList();
 </script>
 </body>
 </html>
