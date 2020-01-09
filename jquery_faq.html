@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jquery faq</title>
+	<style>
+		.invisible {
+			visibility: hidden;
+		}
+		.hiddenVis {
+			display:none;
+		}
+		.popup {
+			border: 5px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div class="popup">
+		<h1>Would you like to sign up for our newsletter?</h1>
+		<span id="hidePopup">x</span>
+	</div>
+	<h2 class="delay hiddenVis">Would you like to register for our site?</h2>
+	<dl>
+		<dt>Yellowstone National Park</dt>
+		<dd class="invisible">is the oldest U.S. national park, founded in 1872</dd>
+		<dt>Yosemite National Park</dt>
+		<dd class="invisible">Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California</dd>
+		<dt>Death Valley National Park</dt>
+		<dd class="invisible">One of the hottest temperatures on earth was recorded in 1913 in Death Valley National Park, registering 134 degrees</dd>
+		<dt> Grand Canyon National Park</dt>
+		<dd class="invisible">The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd>
+		<dt>Carlsbad Caverns National Park</dt>
+		<dd class="invisible">Carlsbad Caverns National Park is home to the nation's deepest cave, which is 1,593 feet deep.</dd>
+		<dt>Crater Lake National Park</dt>
+		<dd class="invisible">At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.</dd>
+		<dt>Yellowstone National Park</dt>
+		<dd class="invisible">The Yellowstone Caldera, Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions.</dd>
+		<dt>Dry Tortugas National Park</dt>
+		<dd class="invisible">Located 70 miles from Key West in the Gulf of Mexico, Dry Tortugas National Park is a collection of seven tiny islands that can be reached only by boat or plane, making it the country's most remote national park.</dd>
+		<dt>Sequoia National Park</dt>
+		<dd class="invisible">In August, 2014, authorities at California's Sequoia National Park found a $36-million marijuana-cultivation operation just half a mile from a popular tourist site.</dd>
+		<dt>Olympic National Park</dt>
+		<dd class="invisible">Bears have not killed a single person in Olympic National Park, but a mountain goat, which is not a native species to the region, killed a man in 2010.</dd>
+	</dl>
+	<h3>Big Bend</h3>
+	<ul>
+		<li>Big Bend National Park covers a total area of 801,163 acres</li>
+		<li>Big Bend was made a national park on June 20, 1935</li>
+		<li>The number of people visiting Big Bend in 2017 was 440,276 </li>
+		<li>The highest elevation found in Big Bend is 7,832 feet on Emory Peak</li>
+	</ul>
+	<h3>Enchanted Rock</h3>
+	<ul>
+		<li>Enchanted Rock stands 425 feet above its base, and its highest point is 1,825 feet above sea level</li>
+		<li>The Texas State Capitol was built from the same stone that makes up Enchanted Rock:</li>
+		<li>More than 400 archeological sites have been found in the park. All are protected, and 120 of them are designated State Archeological Landmarks.</li>
+		<li>More than 250,000 people trek to the park each year to experience the magic of Enchanted Rock. In fact, it is one of the most visited parks in the state park system.</li>
+	</ul>
+	<h3>Yosemite</h3>
+	<ul>
+		<li>There are more than 400 species of animals living in Yosemite, 90 of which are different mammal species.</li>
+		<li>The name “Yosemite” translates to “killer” in Miwok, which is a Native American language.</li>
+		<li>Depending on accessibility, Yosemite is open 24/7.</li>
+		<li>Of California’s 7,000 plant species, 20% of those can be found within Yosemite National Park.</li>
+	</ul>
+	<button type="button" id="yellowBackgroundButton">The button that when clicked makes the last li in each ul have a yellow background</button>
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script>
+		$('dl').after('<a href="#" class="toggle">Click this to toggle national park facts.</a>');
+
+		$('.toggle').click(function(){
+			$('dd').toggleClass('invisible');
+		});
+
+		$('#yellowBackgroundButton').click(function(){
+			$('ul').each(function(){
+					$(this).children().last().css('background-color', 'yellow')
+			});
+		});
+
+		$('h3').click(function(){
+			// $(this).next().children().css('font-weight','bold') //bolds childen
+			$(this).next().slideToggle();
+		});
+
+		$(document).ready(function() {  //once the document is ready
+			$('ul').hide();
+			$('.delay').delay(8000).fadeIn(500);
+		});
+
+		$('li').click(function(){
+			$(this).parent().children().first().css('color','blue')
+		});
+
+		$('#hidePopup').click(function(){
+			$(this).parent().hide();
+		});
+
+	</script>
+</body>
+</html>
