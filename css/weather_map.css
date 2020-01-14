@@ -1,0 +1,80 @@
+html, body {
+	background-color: #898888;
+	color: #F8FFF4;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+	padding: 20px;
+	margin: auto;
+	max-width: 900px;
+	text-align: center;
+}
+h1, h2 {
+	font-family: 'Raleway', sans-serif;
+}
+h1 {
+	padding: 3px;
+}
+.data {
+	color: #FFDF7F;
+	font-weight: bolder;
+}
+.highlight {
+	color: #C5FFFD;
+}
+
+#tabSelect{
+	overflow: hidden;
+	border: 3px solid #EED3EA;
+	background-color: #898888;
+	display:flex;
+	flex:1;
+	justify-content: space-evenly;
+}
+
+#tabSelect button {
+	color: #F8FFF4;
+
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	display:flex;
+	flex:1;
+	justify-content: center;
+	font-family: 'Open Sans', sans-serif;
+
+}
+#tabSelect button:hover {
+	background-color: #aaa9a9;
+}
+
+#tabSelect button.active {
+	background-color: #686868;
+}
+
+.tab {
+	display: none;
+	padding: 6px 12px;
+	border: 3px solid #EED3EA;
+	border-top: none;
+	animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+#map{
+	height: 300px;
+	border: 3px solid #C5FFFD;
+}
+#tomorrow {
+
+}
+#searchBar{
+	width: 200px;
+}

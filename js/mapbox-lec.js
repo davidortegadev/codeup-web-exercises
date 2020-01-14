@@ -15,7 +15,8 @@
 mapboxgl.accessToken = mapboxToken;
 var map = new mapboxgl.Map({
 	container: 'map',
-	style: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
+	// style: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
+	style: 'mapbox://styles/davidortegadev/ck58diazb0gl71cp59b5bfrwd',
 	zoom: 13,
 	center: [-98.496585, 29.460461]
 });
