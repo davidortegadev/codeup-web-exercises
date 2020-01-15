@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<h1 id="cityName">City name</h1>
+<h1 id="cityName">San Antonio, Texas, United States</h1>
 <div id="tabSelect">
 	<button class="tablinks" onclick="openTab(event, 'current')" id="defaultOpen">Current</button>
 	<button class="tablinks" onclick="openTab(event, 'tomorrow')">Tomorrow</button>
@@ -93,13 +93,12 @@
 	</table>
 </div>
 <br/>
-
-<form action="">
-	<input type="text" id="searchBar" placeholder="Enter a location or address:">
-	<button id="submitSearch">Search</button>
-</form>
-<!--<input type="text" placeholder="Enter a location or address:" id="searchBar"><button type="button" id="submitSearch">Search</button>-->
-
+<div id="searchContainer">
+	<form action="">
+		<input type="text" id="searchBar" placeholder="Enter a location or address:">
+		<button id="submitSearch">Search</button>
+	</form>
+</div>
 <br/>
 
 <!-- The HTML element that serves as the Mapbox container -->
@@ -229,13 +228,13 @@
 			let day4Rain = data.daily.data[4].precipProbability;
 			let day5Rain = data.daily.data[5].precipProbability;
 			let day6Rain = data.daily.data[6].precipProbability;
-			$('#day0Rain').html(humanize(parseInt(day0Rain*100))+' percent');
-			$('#day1Rain').html(humanize(parseInt(day1Rain*100))+' percent');
-			$('#day2Rain').html(humanize(parseInt(day2Rain*100))+' percent');
-			$('#day3Rain').html(humanize(parseInt(day3Rain*100))+' percent');
-			$('#day4Rain').html(humanize(parseInt(day4Rain*100))+' percent');
-			$('#day5Rain').html(humanize(parseInt(day5Rain*100))+' percent');
-			$('#day6Rain').html(humanize(parseInt(day6Rain*100))+' percent');
+			$('#day0Rain').html(parseInt(day0Rain*100)+'%');
+			$('#day1Rain').html(parseInt(day1Rain*100)+'%');
+			$('#day2Rain').html(parseInt(day2Rain*100)+'%');
+			$('#day3Rain').html(parseInt(day3Rain*100)+'%');
+			$('#day4Rain').html(parseInt(day4Rain*100)+'%');
+			$('#day5Rain').html(parseInt(day5Rain*100)+'%');
+			$('#day6Rain').html(parseInt(day6Rain*100)+'%');
 
 			let day0High = data.daily.data[0].temperatureHigh;
 			let day0Low = data.daily.data[0].temperatureLow;

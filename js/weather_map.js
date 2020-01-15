@@ -1,7 +1,6 @@
 mapboxgl.accessToken = mapboxWeatherToken;
 var map = new mapboxgl.Map({
 	container: 'map',
-	// style: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
 	style: 'mapbox://styles/davidortegadev/ck5cq3eti02u71ep850q2wgr8',
 	zoom: 5,
 	center: [-98.496585, 29.460461]
@@ -17,10 +16,6 @@ var marker = new mapboxgl.Marker(markerOptions)
 
 function onDragEnd() {
 	var lngLat = marker.getLngLat();
-	//display coords on page
-	// $('#coordDisplay').html(
-	// 	'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat);
-
 	//execute weather update
 	weatherUpdate(lngLat.lat,lngLat.lng);
 }
@@ -33,55 +28,41 @@ function geocode(search, token) {
 	var endPoint = '/geocoding/v5/mapbox.places/';
 	return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
 		.then(function (res) {
+			console.log(res);
 			return res.json();
 			// to get all the data from the request, comment out the following three lines...
 		}).then(function (data) {
 			return data.features[0].center;
 		});
 }
-// var userPlace = prompt('test');
 
-// $('#submitSearch').click(function(){
-// 	// var userPlace = $('#searchBar').toString();
-//
-// 	function geocode(search, token) {
-// 		var baseUrl = 'https://api.mapbox.com';
-// 		var endPoint = '/geocoding/v5/mapbox.places/';
-// 		return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-// 			.then(function (res) {
-// 				return res.json();
-// 				// to get all the data from the request, comment out the following three lines...
-// 			}).then(function (data) {
-// 				return data.features[0].center;
-// 			});
-// 	}
-//
-// 	var userPlace = $('#searchBar').toString();
-//
-// 	geocode(userPlace, mapboxWeatherToken).then(function (result) {
-// 		marker.setLngLat(result);
-// 		map.setCenter(result);
-// 		map.setZoom(8);
-// 		console.log(result);
-// 	});
-// });
+function reverseGeocode(search, token) {
+	var baseUrl = 'https://api.mapbox.com';
+	var endPoint = '/geocoding/v5/mapbox.places/';
+	return fetch(baseUrl + endPoint + search + '.json' + "?" + 'access_token=' + token)
+		.then(function (res) {
+			console.log(res);
+			return res.json();
+			// to get all the data from the request, comment out the following three lines...
+		})
+}
 
 $('#submitSearch').click(function(e){
 		e.preventDefault();
-		var userPlace = $('#searchBar');
+		var userPlace = $('#searchBar').val();
 		geocode(userPlace, mapboxWeatherToken).then(function (result) {
-		marker.setLngLat(result);
-		map.setCenter(result);
-		map.setZoom(8);
-		console.log(result);
-	});
-	weatherUpdate(lngLat.lat,lngLat.lng);
-});
+			let geocodeLat = result[1].toString();
+			let geocodeLong = result[0].toString();
 
-// geocode(userPlace, mapboxWeatherToken).then(function (result) {
-// 	marker.setLngLat(result);
-// 	map.setCenter(result);
-// 	map.setZoom(8);
-// 	console.log(result);
-// });
+			marker.setLngLat({lat: geocodeLat, lng: geocodeLong});
+			map.setCenter({lat: geocodeLat, lng: geocodeLong});
+			map.setZoom(8);
+			// console.log(result);
+			reverseGeocode(result.toString(), mapboxWeatherToken).then(function(result2){
+				// console.log(result2.features[3].place_name);
+				$('#cityName').replaceWith('<h1 id="cityName">'+result2.features[3].place_name+'</h1>')
+			});
+			weatherUpdate(geocodeLat, geocodeLong)
+		});
+});
 

@@ -3,16 +3,20 @@ html, body {
 	color: #F8FFF4;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: lighter;
-	padding: 20px;
+	padding: 10px;
 	margin: auto;
 	max-width: 900px;
 	text-align: center;
 }
 h1, h2 {
+	margin: 5px;
 	font-family: 'Raleway', sans-serif;
 }
 h1 {
 	padding: 3px;
+}
+p{
+	margin: 5px
 }
 .data {
 	color: #FFDF7F;
@@ -75,6 +79,11 @@ h1 {
 #tomorrow {
 
 }
+#searchContainer{
+	border: 3px solid #FFDF7F;
+	height: 50px;
+}
 #searchBar{
-	width: 200px;
+	margin-top: 14px;
+	width: 50%;
 }
